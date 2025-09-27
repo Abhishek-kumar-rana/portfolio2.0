@@ -8,6 +8,7 @@ import ArrowUpRight from "@/assets/icons/arrow-up-right.svg"
 import grainImage from "@/assets/images/grain.jpg"
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
+import PlantImage from "@/assets/images/plantventry.png"
 
 const portfolioProjects = [
   {
@@ -24,6 +25,18 @@ const portfolioProjects = [
   },
   {
     company: "Project",
+    year: "2025",
+    title: "PlantVentry – Inventory management app",
+    results: [
+      { title: "Built a plant inventory web app using Next.js, TypeScript, and Prisma ORM. " },
+      { title: "Managed data with Neon PostgreSQL, ensuring scalability and reliability." },
+      { title: "Improved UX by adding authentication, dark mode, and responsive design." },
+    ],
+    link: "https://nextjs-inventory-puce.vercel.app/",
+    image: PlantImage,
+  },
+  {
+    company: "Project",
     year: "2024",
     title: "BookStore Ecommerce Website",
     results: [
@@ -34,18 +47,7 @@ const portfolioProjects = [
     link: "https://book-store-gilt-nine.vercel.app/",
     image: BookStoreImage,
   },
-  {
-    company: "Project",
-    year: "2023",
-    title: "Todo App with React.JS",
-    results: [
-      { title: "Crud Operation " },
-      { title: "Flexible" },
-      { title: "Used React.JS for UI" },
-    ],
-    link: "https://todo-app-lime-three.vercel.app/",
-    image: TodoImage,
-  },
+  
 ];
 
 export const ProjectsSection = () => {

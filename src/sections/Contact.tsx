@@ -28,10 +28,13 @@ export const ContactSection = () => {
 
           {/* Button with hover working */}
           <div className="flex-shrink-0 z-10 ">
+            <a href="mailto:lalanrana01000@gmail.com">
             <button className="inline-flex items-center justify-center gap-2 mt-2 md:mt-0 px-6 py-3 bg-gray-950 rounded-2xl text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-emerald-400 hover:scale-105 hover:shadow-xl transform shadow-emerald-600 hover:text-black ">
               <span>Contact Me</span>
               <ArrowUpRightIcon className="size-6" />
             </button>
+            </a>
+              
           </div>
         </div>
       </div>
