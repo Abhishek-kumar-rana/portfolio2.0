@@ -28,8 +28,8 @@ const portfolioProjects = [
     year: "2025",
     title: "PlantVentry – Inventory management app",
     results: [
-      { title: "Built a plant inventory web app using Next.js, TypeScript, and Prisma ORM. " },
-      { title: "Managed data with Neon PostgreSQL, ensuring scalability and reliability." },
+      { title: "Built a plant inventory web app using Next.js with TypeScript. " },
+      { title: "Managed data with Neon PostgreSQL with Prisma ORM ." },
       { title: "Improved UX by adding authentication, dark mode, and responsive design." },
     ],
     link: "https://nextjs-inventory-puce.vercel.app/",
