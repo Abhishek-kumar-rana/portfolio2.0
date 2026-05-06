@@ -6,7 +6,6 @@ import StarIcon from '@/assets/icons/star.svg'
 import { HeroOrbit } from '@/components/HeroOrbit';
 import SparkleIcon from '@/assets/icons/sparkle.svg'
 import AnimatedButtons from '@/components/HeroBbutton';
-
 export const HeroSection = () => {
   return (
     <div className=' py-32 md:py-40 lg:py-40  relative z-0 overflow-x-clip'>
@@ -73,7 +72,7 @@ export const HeroSection = () => {
         </div>
         <div className=' max-w-lg mx-auto'>
           {/* <h3 className=' font-serif text-2xl md:text-2xl text-center mt-8 tracking-wide'>Abhishek Kumar Rana</h3> */}
-          <h2 className=' font-serif text-3xl md:text-4xl text-center mt-8 tracking-wide'>Building Exceptional User Experience</h2>
+          <h2 className=' font-manbow text-2xl md:text-2xl text-center mt-8 tracking-wide '>Building Exceptional User Experience</h2>
           <p className=' mt-4 text-center text-white/60 md:text-lg'>
             I specialize in transforming design into functional, high performing  web application. let&apos;s discuss your next project.
           </p>

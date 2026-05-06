@@ -47,6 +47,8 @@ const config: Config = {
       fontFamily:{
         sans:'var(--font-sans)',
         serif:'var(--font-serif)',
+          collectiveOutline: ["CollectiveOutline"],
+          manbow: ["Manbow"],
       }
     },
   },

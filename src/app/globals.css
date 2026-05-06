@@ -47,3 +47,16 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+
+@font-face {
+  font-family: "CollectiveOutline";
+  src: url("../assets/fonts/collective.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Manbow";
+  src: url("../assets/fonts/manbow.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

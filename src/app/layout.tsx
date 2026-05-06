@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 import {Inter, Calistoga} from "next/font/google"
 import { twMerge } from "tailwind-merge";
 

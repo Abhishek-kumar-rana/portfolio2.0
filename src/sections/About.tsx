@@ -128,7 +128,7 @@ const hobbies = [
   },
   {
     title: 'Hiking',
-    emojie: '🥾🌲',
+    emojie: '🌲',
     left: '67%',
     top: '50%'
   }
