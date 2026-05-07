@@ -1,3 +1,4 @@
+"use client";
 import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
 import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
@@ -6,6 +7,9 @@ import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import { Card } from "@/components/Card";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import StarIcon from "@/assets/icons/star.svg"
 
 const testimonials = [
   {
@@ -41,13 +45,22 @@ const testimonials = [
 ];
 
 export const TestimonialsSection = () => {
+  const sectionRef = useRef(null);
+
+const { scrollYProgress } = useScroll({
+  target: sectionRef,
+  offset: ["start end", "end start"],
+});
+  
   return (
-    <div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-24 overflow-hidden">
+    <div className="[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-24 relative overflow-hidden"  ref={sectionRef}>
       <SectionHeader
         title="What Others Say"
         eyebrow="Testimonials from College Journey"
         description="Here’s what my peers, professors, and project teammates say about working with me during my time at BIT Sindri."
       />
+
+      
 
       <div className="relative mt-16 z-10">
         <div className="flex gap-5 animate-move-left w-max hover:[animation-play-state:paused]">
@@ -79,6 +92,65 @@ export const TestimonialsSection = () => {
           ))}
         </div>
       </div>
+       <motion.div
+  style={{
+    x: useTransform(scrollYProgress, [0, 1], [300, -2100]),
+
+    y: useTransform(scrollYProgress, [0, 1], [100, -100]),
+
+    rotate: useTransform(scrollYProgress, [0, 1], [0, 360]),
+  }}
+  className="
+    absolute
+    right-0
+    top-20
+    z-50
+    pointer-events-none
+  "
+>
+
+  {/* Orbit Container */}
+  <div className="relative size-32">
+
+    {/* Big Star */}
+    <motion.div
+      animate={{
+        rotate: 360,
+      }}
+      transition={{
+        duration: 12,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute inset-0 flex items-center justify-center"
+    >
+      <StarIcon className="size-14 text-emerald-300/40" />
+    </motion.div>
+
+    {/* Small Orbiting Star */}
+    <motion.div
+      animate={{
+        rotate: -360,
+      }}
+      transition={{
+        duration: 8,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="
+        absolute
+        left-1/2
+        top-1/2
+        origin-center
+      "
+    >
+      <div className="translate-x-10 -translate-y-10">
+        <StarIcon className="size-8 text-sky-300/50" />
+      </div>
+    </motion.div>
+
+  </div>
+</motion.div>
     </div>
   );
 };
