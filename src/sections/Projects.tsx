@@ -9,6 +9,9 @@ import grainImage from "@/assets/images/grain.jpg"
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import PlantImage from "@/assets/images/plantventry.png"
+import QuickInvoice from "@/assets/images/QuickInvoice.png"
+import ChatFlow from "@/assets/images/ChatFlow.png"
+
 
 const portfolioProjects = [
   {
@@ -26,26 +29,26 @@ const portfolioProjects = [
   {
     company: "Project",
     year: "2025",
-    title: "PlantVentry – Inventory management app",
+    title: "QuickInvoice– Invoice Generator Web App",
     results: [
-      { title: "Built a plant inventory web app using Next.js with TypeScript. " },
-      { title: "Managed data with Neon PostgreSQL with Prisma ORM ." },
-      { title: "Improved UX by adding authentication, dark mode, and responsive design." },
+      { title: "Developed a full-stack invoice generator with real-time preview, PDF export, and multiple responsive invoice templates." },
+      { title: " Designed REST APIs with Spring Boot and integrated PostgreSQL (Neon) for persistent invoice storage." },
+      { title: "Added Clerk-based authentication and Cloudinary for secure document/image storage and scalable backend architecture." },
     ],
-    link: "https://nextjs-inventory-puce.vercel.app/",
-    image: PlantImage,
+    link: "https://quick-invoice-01.vercel.app",
+    image: QuickInvoice,
   },
   {
     company: "Project",
     year: "2024",
-    title: "BookStore Ecommerce Website",
+    title: "ChatFlow– Real-Time Messaging App ",
     results: [
-      { title: "User log-In/sign-Up features" },
-      { title: "Implemented a light/Dark theme" },
-      { title: "Fetching api from backend using expressJS and mongoDB " },
+      { title: "Real-time chat app using MERN and Socket.IO with instant messaging, typing indicators, and online/offline status." },
+      { title: "Implemented secure JWT authentication (HTTP-only cookies) and scalable REST APIs using Node.js and Express.js." },
+      { title: "Integrated Cloudinary for media uploads; built responsive React UI with message reactions and emoji picker." },
     ],
-    link: "https://book-store-gilt-nine.vercel.app/",
-    image: BookStoreImage,
+    link: "https://chatappclient-caqg.onrender.com",
+    image: ChatFlow,
   },
   
 ];
