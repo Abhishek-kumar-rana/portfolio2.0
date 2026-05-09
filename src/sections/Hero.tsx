@@ -8,7 +8,8 @@ import AnimatedButtons from '@/components/HeroBbutton';
 
 export const HeroSection = () => {
   return (
-    <div className='min-h-screen relative z-0 overflow-x-clip flex items-center justify-center'>
+    <div>
+      <div className='min-h-screen relative z-0 overflow-x-clip flex items-center justify-center'>
 
       {/* BACKGROUND GRAIN */}
       <div className='absolute inset-0 opacity-5 -z-30' style={{ backgroundImage: `url(${grainImage.src})` }}></div>
@@ -95,12 +96,13 @@ export const HeroSection = () => {
           </p>
         </div>
 
-      <div className='absolute bottom-0 w-full flex items-center justify-between gap-5 z-10'>
+      </div>
+
+    </div>
+      <div className=' top-0 w-full flex items-center justify-center gap-5 z-10'>
         <AnimatedButtons />
 
       </div>
-      </div>
-
     </div>
   );
 };

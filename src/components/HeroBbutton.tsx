@@ -24,7 +24,7 @@ export default function AnimatedButtons() {
   return (
     <motion.div
       // ✅ small: flex-col center, large: full width with buttons on edges
-      className="flex flex-col items-center md:flex-row lg:flex-row lg:justify-between md:justify-between md:w-full lg:w-full mt-8 gap-4 px-4 py-6"
+      className="flex flex-row    items-center  lg:justify-between justify-between w-full   gap-4 px-4 pb-6"
       variants={container}
       initial="hidden"
       animate="show"
