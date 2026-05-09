@@ -42,7 +42,7 @@ export const SectionHeader = ({
 
           "
           style={{
-            WebkitTextStroke: "0.5px rgba(56,189,248,0.8)",
+            WebkitTextStroke: "0.5px rgba(56, 191, 248, 0.97)",
           }}
         >
           {eyebrow}

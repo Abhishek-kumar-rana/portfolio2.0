@@ -1,7 +1,6 @@
 'use client';
-
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+ import GithubIcon from '../assets/icons/github.svg';
 
 const container = {
   hidden: { opacity: 0, y: 30 },
@@ -24,46 +23,48 @@ const item = {
 export default function AnimatedButtons() {
   return (
     <motion.div
-      className="flex flex-col items-center mt-8 gap-4"
+      // ✅ small: flex-col center, large: full width with buttons on edges
+      className="flex flex-col items-center md:flex-row lg:flex-row lg:justify-between md:justify-between md:w-full lg:w-full mt-8 gap-4 px-4 py-6"
       variants={container}
       initial="hidden"
       animate="show"
     >
-      {/* Button 2: Resume */}
-      <motion.button
+      {/* ✅ LEFT - Resume button */}
+      
+      <motion.a
+        href="https://github.com/abhishek-kumar-rana"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+       <motion.button
         variants={item}
         whileHover="hover"
         whileTap={{ scale: 0.95 }}
         className="inline-flex items-center border rounded-xl gap-2 bg-white text-gray-900 px-6 h-12 transition-shadow duration-300 hover:shadow-xl"
       >
         <motion.span
-          variants={{
-            hover: { rotate: [0, 10, -10, 0] },
-          }}
+          variants={{ hover: { rotate: [0, 10, -10, 0] } }}
           transition={{ duration: 0.6 }}
         >
-          ↓📁
+          <GithubIcon className="size-5" />
         </motion.span>
-        <span className="font-semibold">Resume/CV</span>
+        <span className="font-semibold">Github</span>
       </motion.button>
+      </motion.a>
 
-      {/* Button 1: Explore */}
+      {/* ✅ RIGHT - Explore button */}
       <motion.button
         variants={item}
         whileHover="hover"
         whileTap={{ scale: 0.95 }}
-        className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transition-colors duration-300 hover:bg-white hover:text-black"
+        className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transition-colors duration-300  "
       >
-        <span className="font-semibold">Explore My Work</span>
+        <span className="font-semibold">Dhanbad, India</span>
         <motion.span
-          variants={{
-            hover: { y: [0, 5, 0] },
-          }}
-          transition={{
-            duration: 0.6,
-          }}
+          variants={{ hover: { y: [0, 5, 0] } }}
+          transition={{ duration: 0.6 }}
         >
-          <ArrowDown className="size-4" />
+          
         </motion.span>
       </motion.button>
     </motion.div>
