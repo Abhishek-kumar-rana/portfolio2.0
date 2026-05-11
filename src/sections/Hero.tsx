@@ -1,4 +1,4 @@
-import frontImage from '@/assets/images/frontImage4.png'
+import frontImage from '@/assets/images/frontImage3.png'
 import Image from 'next/image';
 import grainImage from '@/assets/images/grain.jpg'
 import StarIcon from '@/assets/icons/star.svg'
