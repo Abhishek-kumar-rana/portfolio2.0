@@ -29,7 +29,7 @@ export default function AnimatedButtons() {
       initial="hidden"
       animate="show"
     >
-      {/* ✅ LEFT - Resume button */}
+      {/* ✅ LEFT - github button */}
       
       <motion.a
         href="https://github.com/abhishek-kumar-rana"
@@ -52,14 +52,15 @@ export default function AnimatedButtons() {
       </motion.button>
       </motion.a>
 
-      {/* ✅ RIGHT - Explore button */}
+      {/* ✅ RIGHT - location button */}
       <motion.button
         variants={item}
         whileHover="hover"
         whileTap={{ scale: 0.95 }}
-        className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transition-colors duration-300  "
+        className="inline-flex items-center gap-2 border border-white/15 px-3 h-12 rounded-xl transition-colors duration-300  "
       >
-        <span className="font-semibold">Dhanbad, India</span>
+        {/* keep font italic */}
+        <span className="italic">Dhanbad, India</span>
         <motion.span
           variants={{ hover: { y: [0, 5, 0] } }}
           transition={{ duration: 0.6 }}

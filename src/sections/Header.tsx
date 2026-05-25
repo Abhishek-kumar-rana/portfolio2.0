@@ -27,13 +27,13 @@ export const Header = () => {
 
   return (
     <div
-      className={`fixed top-3 left-1/2 -translate-x-1/2 z-[5000] transition-transform duration-300 ${
-        showHeader ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-[5000] transition-transform duration-300 ${
+        showHeader ? "translate-y-2" : "-translate-y-full"
       }`}
     >
       <div className="flex gap-1 px-4 py-1 sm:px-4 sm:py-3 border border-white/15 rounded-full bg-white/10 backdrop-blur-2xl shadow-white/10  md:text-base max-w-[90vw]">
         <span className="uppercase font-semibold tracking-wide bg-gradient-to-r from-emerald-300 to-sky-600 text-transparent bg-clip-text text-center whitespace-nowrap">
-          Hello, I&apos;m Abhishek Kumar Rana
+          Hello, I&apos;m Abhishek Rana
         </span>
       </div>
     </div>

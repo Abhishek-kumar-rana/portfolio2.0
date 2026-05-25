@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@netlify/plugin-nextjs": "^5.11.4",
     "@svgr/webpack": "^8.1.0",
     "framer-motion": "^11.3.21",

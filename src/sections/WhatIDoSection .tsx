@@ -1,11 +1,11 @@
 "use client";
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import StarIcon from "@/assets/icons/star.svg";
 
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Code2, Globe, LayoutDashboard, Database, Cpu, Sparkles } from "lucide-react";
+import { Code2, Globe, LayoutDashboard, Database, Cpu, Sparkles, ChevronDown } from "lucide-react";
 
 const services = [
   { title: "Frontend Development", description: "Building responsive, modern, and animated interfaces using React, Next.js, TailwindCSS, and Framer Motion.", icon: Code2 },
@@ -15,6 +15,75 @@ const services = [
   { title: "AI Integration", description: "Integrating AI tools and APIs like Gemini/OpenAI into applications for smarter and more interactive experiences.", icon: Cpu },
   { title: "Creative Web Experiences", description: "Designing cinematic portfolio sections, parallax effects, scroll animations, and immersive modern websites.", icon: Sparkles },
 ];
+
+const ServiceCard = ({ service, index }: { service: typeof services[0]; index: number }) => {
+  const [expanded, setExpanded] = useState(false);
+  const Icon = service.icon;
+
+  return (
+    <Card className="relative overflow-hidden p-8 rounded-3xl bg-gray-800/50 border border-white/10 hover:border-emerald-300/30 transition-all duration-500 group hover:-translate-y-2 sticky">
+      {/* Hover glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-300/5 to-sky-400/5 opacity-0 group-hover:opacity-100 transition duration-500" />
+      <div className="absolute -top-10 -right-10 size-32 rounded-full bg-emerald-300/10 blur-3xl" />
+
+      {/* Icon */}
+      <div className="size-14 rounded-2xl bg-gradient-to-br from-emerald-300/20 to-sky-400/20 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500">
+        <Icon className="size-7 text-emerald-300" />
+      </div>
+
+      {/* Title row — the button wraps ONLY the title + chevron for mobile tap */}
+      <div className="mb-4">
+        {/* Mobile: title is a button that toggles description */}
+        <button
+          type="button"
+          className="w-full flex items-center justify-between gap-2 text-left md:pointer-events-none md:cursor-default"
+          onClick={() => setExpanded((prev) => !prev)}
+          aria-expanded={expanded}
+        >
+          <h3 className="text-2xl font-semibold">{service.title}</h3>
+
+          {/* Chevron — only visible on mobile */}
+          {/* <motion.span
+            animate={{ rotate: expanded ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden flex-shrink-0 size-8 rounded-full bg-white/10 flex items-center justify-center"
+          >
+          </motion.span> */}
+        </button>
+      </div>
+
+      {/* Mobile description — animated accordion */}
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            key="desc-mobile"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="overflow-hidden md:hidden"
+          >
+            <p className="text-white/60 leading-relaxed text-sm pb-1">
+              {service.description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Desktop description — always visible */}
+      <div className="hidden md:block">
+        <p className="text-white/60 leading-relaxed text-base">
+          {service.description}
+        </p>
+      </div>
+
+      {/* Watermark number */}
+      <div className="absolute bottom-4 right-5 text-5xl font-bold text-white/[0.04] select-none">
+        0{index + 1}
+      </div>
+    </Card>
+  );
+};
 
 export const WhatIDoSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -46,17 +115,16 @@ export const WhatIDoSection = () => {
       onMouseMove={handleMouseMove}
       className={`py-24 relative overflow-hidden ${isInside ? "[cursor:none]" : ""}`}
     >
-      {/* ── Dark Invert Glass Cursor ── */}
+      {/* Custom cursor */}
       {isInside && (
         <motion.div
-         style={{
+          style={{
             x: smoothX, y: smoothY,
             translateX: "-50%", translateY: "-50%",
             backdropFilter: "invert(1) sepia(1) saturate(1) hue-rotate(435deg) brightness(0.3)",
             WebkitBackdropFilter: "invert(1) sepia(1) saturate(1) hue-rotate(260deg) brightness(0.3)",
             border: "3px solid #1dcd89",
-            }}
-          
+          }}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
@@ -64,7 +132,7 @@ export const WhatIDoSection = () => {
         />
       )}
 
-      {/* ── Parallax Star ── */}
+      {/* Parallax star */}
       <motion.div
         style={{
           x: useTransform(scrollYProgress, [0, 1], [300, -2100]),
@@ -94,22 +162,12 @@ export const WhatIDoSection = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <Card key={service.title} className="relative overflow-hidden p-8 rounded-3xl bg-gray-800/50 border border-white/10 hover:border-emerald-300/30 transition-all duration-500 group hover:-translate-y-2 sticky">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-300/5 to-sky-400/5 opacity-0 group-hover:opacity-100 transition duration-500" />
-                <div className="absolute -top-10 -right-10 size-32 rounded-full bg-emerald-300/10 blur-3xl" />
-                <div className="size-14 rounded-2xl bg-gradient-to-br from-emerald-300/20 to-sky-400/20 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500">
-                  <Icon className="size-7 text-emerald-300" />
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-white/60 leading-relaxed text-sm md:text-base">{service.description}</p>
-                <div className="absolute bottom-4 right-5 text-5xl font-bold text-white/[0.04] select-none">0{index + 1}</div>
-              </Card>
-            );
-          })}
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} service={service} index={index} />
+          ))}
         </div>
+
+         
       </div>
     </section>
   );

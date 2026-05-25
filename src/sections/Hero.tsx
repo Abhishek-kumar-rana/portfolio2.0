@@ -65,16 +65,16 @@ export const HeroSection = () => {
       <div className="container flex flex-col items-center justify-center">
 
         {/* IMAGE + OVERLAY TEXT */}
-        <div className='relative w-[400px] h-[550px]'>
+        <div className='relative w-[400px] h-[550px] flex items-center justify-center '>
 
           {/* ✅ IMAGE - neeche se bg mein fade hoti hai */}
           <Image
             src={frontImage}
             alt='Profile'
-            className='w-[400px] h-[500px] object-cover object-top rounded-3xl'
+            className='w-[300px] h-[400px] object-cover object-top rounded-3xl'
             style={{
               maskImage: 'linear-gradient(to bottom, black 40%, transparent 85%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 40%, transparent 85%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 30%, transparent 85%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
               maskComposite: 'intersect',
               WebkitMaskComposite: 'destination-in',
             }}
@@ -83,26 +83,31 @@ export const HeroSection = () => {
           {/* ✅ TEXT - image ke upar, fade zone mein */}
           <div className='absolute bottom-4 left-0 right-0 flex justify-center'>
             <h2 className='font-manbow text-2xl md:text-3xl text-center text-white tracking-wide px-4'>
-              Building Exceptional User Experience
+              <span>Building </span>
+              <span className='bg-white text-black'>EX</span>
+              <span className='text-emerald-500'>ceptional</span>  
+              <span > User </span>
+              <span className='bg-white text-black'> EX</span>
+              <span>perience </span>
             </h2>
           </div>
         </div>
 
         {/* DESCRIPTION */}
         <div className='max-w-lg mx-auto'>
-          <p className='text-center text-white/60 md:text-lg'>
+          <p className='text-center text-white/60 mt-6 text-sm font-light md:text-base leading-relaxed px-4'>
             I specialize in transforming design into functional, high performing
             web applications. Let&apos;s discuss your next project.
           </p>
+    </div>
+      <div className=' top-10 w-full flex items-center justify-center mt-10 md:mt-0 lg:mt-0 z-10'>
+        <AnimatedButtons />
+
+      </div>
         </div>
 
       </div>
 
-    </div>
-      <div className=' top-0 w-full flex items-center justify-center gap-5 z-10'>
-        <AnimatedButtons />
-
-      </div>
     </div>
   );
 };

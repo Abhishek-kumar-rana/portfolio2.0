@@ -29,7 +29,7 @@ export const Footer = () => {
           <div className=' border-t border-white/15 relative'>
           <div className="flex flex-col md:flex-row justify-between items-center py-4  " >
             <div className="text-gray-500 text-sm mb-0 px-2 leading-relaxed">
-              <span className=''>Abhishek, Thank you for visiting my portfolio!</span>
+              <span className=''>Thank you for visiting my portfolio!</span>
             </div>
             <div className="flex gap-4  lg:gap-6 justify-between  md:gap-2 mt-4 md:mt-0 lg:flex-row flex-col items-center md:flex-row md:items-center">
               {footerLinks.map((link, index) => (
