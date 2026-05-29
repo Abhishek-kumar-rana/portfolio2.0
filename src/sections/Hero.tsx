@@ -82,13 +82,13 @@ export const HeroSection = () => {
 
           {/* ✅ TEXT - image ke upar, fade zone mein */}
           <div className='absolute bottom-4 left-0 right-0 flex justify-center'>
-            <h2 className='font-manbow text-2xl md:text-3xl text-center text-white tracking-wide px-4'>
-              <span>Building </span>
+            <h2 className=' text-2xl md:text-3xl text-center text-white tracking-wide px-4 '>
+              <span>BUILDING </span>
               <span className='bg-white text-black'>EX</span>
-              <span className='text-emerald-500'>ceptional</span>  
-              <span > User </span>
+              <span className='text-emerald-500'>CEPTIONAL</span>  
+              <span > USER </span>
               <span className='bg-white text-black'> EX</span>
-              <span>perience </span>
+              <span>PERIENCE </span>
             </h2>
           </div>
         </div>

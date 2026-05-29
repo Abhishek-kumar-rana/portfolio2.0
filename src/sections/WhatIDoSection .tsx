@@ -156,8 +156,8 @@ export const WhatIDoSection = () => {
 
       <div className="container">
         <SectionHeader
-          title="What I Do"
-          eyebrow="Crafting Modern Digital Experiences"
+          title="Crafting Modern Digital Experiences"
+          eyebrow="What I Do"
           description="I build scalable, interactive, and visually engaging web applications focused on performance, usability, and premium user experience."
         />
 
