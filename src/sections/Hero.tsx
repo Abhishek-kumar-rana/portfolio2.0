@@ -9,10 +9,10 @@ import AnimatedButtons from '@/components/HeroBbutton';
 export const HeroSection = () => {
   return (
     <div>
-      <div className='min-h-screen relative z-0 overflow-x-clip flex items-center justify-center'>
+      <div className='min-h-screen relative z-0 overflow-hidden flex items-center justify-center'>
 
       {/* BACKGROUND GRAIN */}
-      <div className='absolute inset-0 opacity-5 -z-30' style={{ backgroundImage: `url(${grainImage.src})` }}></div>
+      <div className='absolute  opacity-5 -z-30' style={{ backgroundImage: `url(${grainImage.src})` }}></div>
 
       {/* MASK LAYER */}
       <div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)] -z-10'>

@@ -1,22 +1,12 @@
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
+import { FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 export const Footer = () => {
   const footerLinks = [
-    {
-      title: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/abhishek-kumar-b32a75258/'
-    },
-    {
-      title: 'Gmail',
-      link: 'mailto:lalanrana01000@gmail.com'
-    },
-    {
-      title: 'Instagram',
-      link: 'https://www.instagram.com/abhishaans?igsh=NHpjbGg1ZmFwNzkz'
-    },
-    {
-      title: 'WhatsApp',
-      link: 'https://wa.me/916207021678?text=Hello%20Abhishek%2C%20I%20found%20your%20portfolio!'
-    }
+    { title: 'LinkedIn', link: 'https://www.linkedin.com/in/abhishek-kumar-b32a75258/', icon: <FaLinkedinIn size={14} /> },
+    { title: 'Gmail', link: 'mailto:lalanrana01000@gmail.com', icon: <MdEmail size={14} /> },
+    { title: 'Instagram', link: 'https://www.instagram.com/abhishaans?igsh=NHpjbGg1ZmFwNzkz', icon: <FaInstagram size={14} /> },
+    { title: 'WhatsApp', link: 'https://wa.me/916207021678?text=Hello%20Abhishek%2C%20I%20found%20your%20portfolio!', icon: <FaWhatsapp size={14} /> },
   ];
 
   return (
@@ -31,20 +21,19 @@ export const Footer = () => {
             <div className="text-gray-500 text-sm mb-0 px-2 leading-relaxed">
               <span className=''>Thank you for visiting my portfolio!</span>
             </div>
-            <div className="flex gap-4  lg:gap-6 justify-between  md:gap-2 mt-4 md:mt-0 lg:flex-row flex-col items-center md:flex-row md:items-center">
+            <div className="flex gap-4  lg:gap-6 justify-between  md:gap-2 mt-4 md:mt-0 lg:flex-row flex-row items-center md:flex-row md:items-center">
               {footerLinks.map((link, index) => (
-                
-                  <a 
+                <a
                   key={index}
                   href={link.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-gray-700 font-semibold md:text-sm transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl border border-white/10 bg-white/[0.03] text-white/60 text-sm font-medium transition-all duration-200 hover:bg-emerald-300/10 hover:border-emerald-300/40 hover:text-emerald-300 group"
                 >
-                  {link.title}
-                <ArrowUpRightIcon className="size-6 inline-block ml-1" />
+                  <span>{link.icon}</span>
+                  {/* <span>{link.title}</span> */}
+                  {/* <ArrowUpRightIcon className="size-3.5 opacity-50 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /> */}
                 </a>
-                
               ))}
             </div>
           </div>
