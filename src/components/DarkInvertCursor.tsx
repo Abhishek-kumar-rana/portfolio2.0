@@ -1,7 +1,7 @@
 // "use client";
 
 // /**
-//  * DarkInvertCursor — Premium futuristic dark inverted glass cursor
+//  * DarkInvertCursor - Premium futuristic dark inverted glass cursor
 //  *
 //  * Usage:
 //  *   Wrap any section with <SectionWithCursor> OR use the
@@ -9,9 +9,9 @@
 //  *   and call the provided mouse handlers.
 //  *
 //  * Export summary:
-//  *   - DarkInvertCursor          — the raw cursor element (place inside a relative parent)
-//  *   - useDarkInvertCursor       — hook that returns refs + handlers + isInside
-//  *   - SectionWithCursor         — ready-made wrapper that wires everything up
+//  *   - DarkInvertCursor          - the raw cursor element (place inside a relative parent)
+//  *   - useDarkInvertCursor       - hook that returns refs + handlers + isInside
+//  *   - SectionWithCursor         - ready-made wrapper that wires everything up
 //  */
 
 // import {
@@ -143,10 +143,10 @@
 //               width: size,
 //               height: size,
 //               // Real CSS backdrop-filter composition:
-//               // 1. invert(1)       — flips underlying pixel colours
-//               // 2. hue-rotate(180deg) — re-correct hue so result is NOT cyan-on-yellow
-//               // 3. brightness(0.55) — pull it dark so it looks like a dark glass
-//               // 4. blur(2px)       — soft lens edge
+//               // 1. invert(1)       - flips underlying pixel colours
+//               // 2. hue-rotate(180deg) - re-correct hue so result is NOT cyan-on-yellow
+//               // 3. brightness(0.55) - pull it dark so it looks like a dark glass
+//               // 4. blur(2px)       - soft lens edge
 //               backdropFilter:
 //                 "invert(1) hue-rotate(180deg) brightness(0.52) blur(2px)",
 //               WebkitBackdropFilter:
@@ -240,7 +240,7 @@
 //   } = useDarkInvertCursor();
 
 //   return (
-//     // @ts-expect-error — polymorphic "as" prop
+//     // @ts-expect-error - polymorphic "as" prop
 //     <Tag
 //       ref={sectionRef}
 //       onMouseEnter={handleMouseEnter}
