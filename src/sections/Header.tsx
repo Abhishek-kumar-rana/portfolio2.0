@@ -53,10 +53,20 @@ export const Header = () => {
       if (e.key === "Escape") setOpen(false);
       else if (scrollKeys.has(e.key)) e.preventDefault();
     };
+    // Pause everything under the opaque overlay so the menu animates on a quiet page.
+    const main = document.getElementById("main");
+    const footer = document.querySelector("footer");
+    const hideTimer = setTimeout(() => {
+      main?.style.setProperty("visibility", "hidden");
+      footer?.style.setProperty("visibility", "hidden");
+    }, 320);
     window.addEventListener("wheel", block, { passive: false });
     window.addEventListener("touchmove", block, { passive: false });
     window.addEventListener("keydown", onKey);
     return () => {
+      clearTimeout(hideTimer);
+      main?.style.removeProperty("visibility");
+      footer?.style.removeProperty("visibility");
       window.removeEventListener("wheel", block);
       window.removeEventListener("touchmove", block);
       window.removeEventListener("keydown", onKey);
@@ -107,11 +117,11 @@ export const Header = () => {
             role="dialog"
             aria-modal="true"
             aria-label="Site menu"
-            initial={{ clipPath: "circle(0% at calc(100% - 3.5rem) 3rem)" }}
-            animate={{ clipPath: "circle(150% at calc(100% - 3.5rem) 3rem)" }}
-            exit={{ clipPath: "circle(0% at calc(100% - 3.5rem) 3rem)" }}
-            transition={{ duration: 0.8, ease }}
-            className="pointer-events-auto fixed inset-0 -z-10 bg-gray-950/95 backdrop-blur-xl overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="pointer-events-auto fixed inset-0 -z-10 bg-gray-950 overflow-hidden will-change-[opacity]"
           >
             {/* glows, clipped to the screen so they can't cause sideways scroll */}
             <div aria-hidden className="fixed inset-0 overflow-hidden pointer-events-none">
