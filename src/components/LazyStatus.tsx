@@ -34,11 +34,7 @@ export const LazyStatus = () => {
           )}
         </span>
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 whitespace-nowrap">
-          {done ? (
-            <>all <span className="text-emerald-300">{TOTAL}</span> sections loaded</>
-          ) : (
-            <>lazy loaded · <span className="text-emerald-300">{loaded}/{TOTAL}</span></>
-          )}
+lazy loaded · <span className="text-emerald-300">{loaded}/{TOTAL}</span>
         </span>
       </div>
     </div>
