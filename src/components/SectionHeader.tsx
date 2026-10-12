@@ -2,14 +2,30 @@ export const SectionHeader = ({
   title,
   eyebrow,
   description,
+  index,
+  headingId,
 }: {
   title: string;
   eyebrow: string;
   description: string;
+  index?: number;
+  headingId?: string;
 }) => {
   return (
     <div className="flex flex-col items-center px-4 overflow-hidden">
-      
+
+      {/* Section index — orbit chip */}
+      {index !== undefined && (
+        <div aria-hidden className="mb-4 pt-2 inline-flex items-center gap-3 text-xs font-mono text-white/40">
+          <span className="h-px w-8 bg-gradient-to-r from-transparent to-emerald-300/60" />
+          <span className="relative grid place-items-center size-7 rounded-full border border-white/15">
+            <span className="absolute inset-[-4px] rounded-full border border-dashed border-emerald-300/30 animate-spin [animation-duration:12s]" />
+            <span className="text-emerald-300">{String(index).padStart(2, "0")}</span>
+          </span>
+          <span className="h-px w-8 bg-gradient-to-l from-transparent to-sky-400/60" />
+        </div>
+      )}
+
       {/* Top Text */}
       <p className="text-center uppercase font-semibold tracking-[0.25em] bg-gradient-to-r from-emerald-300 to-sky-500 text-transparent bg-clip-text text-xs sm:text-sm md:text-base">
         {title}
@@ -17,9 +33,10 @@ export const SectionHeader = ({
 
       {/* Heading */}
       <div className="relative flex items-center justify-center mt-5 w-full py-4">
-        
-        {/* Outline Text */}
-        <h1
+
+        {/* Outline Text — decorative only */}
+        <div
+          aria-hidden
           className="
             absolute
             inset-0
@@ -33,7 +50,7 @@ export const SectionHeader = ({
             leading-none
             text-center
             break-words
-            
+
             text-[35px]
             lg:text-[70px]
             px-2
@@ -46,10 +63,11 @@ export const SectionHeader = ({
           }}
         >
           {eyebrow}
-        </h1>
+        </div>
 
         {/* Solid Text */}
         <h2
+          id={headingId}
           className="
             relative
             z-10
